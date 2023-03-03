@@ -1,0 +1,40 @@
+package Test;
+
+import java.util.Scanner;
+
+public class Test {
+	
+	
+	
+	static void testInput() {
+		String id;
+		String password;
+		String passwordCheck;
+		String address;
+		Scanner scan = new Scanner(System.in);
+
+		System.out.print("ID 입력 : ");
+		id = scan.nextLine();
+		while (true) {
+			System.out.println("비밀번호 입력 : ");
+			password = scan.nextLine();
+			System.out.println("비밀번호 확인 : ");
+			passwordCheck = scan.nextLine();
+			if (password.equals(passwordCheck)) {
+				System.out.println("비밀번호가 일치합니다.");
+				break;
+			} else {
+				System.out.println("다시 비밀번호를 입력해 주세요");
+			}
+		}
+		System.out.println("주소 입력 : ");
+		address = scan.nextLine();
+		
+	}
+
+	public static void main(String[] args) {
+
+		testInput();
+	}
+
+}
