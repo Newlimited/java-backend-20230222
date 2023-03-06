@@ -6,7 +6,6 @@
     <fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="chapter3.A_ClassObject.SmartPhone"/>
     <fullyQualifiedTypeName name="example.SignUp.SignUp"/>
@@ -24,4 +23,13 @@
     <fullyQualifiedTypeName name="chapter3.D_Constructor.Circle"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
+    <fullyQualifiedTypeName name="chapter3.E_Inheritance.Human"/>
+    <fullyQualifiedTypeName name="chapter3.E_Inheritance.Developer"/>
+    <fullyQualifiedTypeName name="chapter3.F_Overriding.Developer"/>
+    <fullyQualifiedTypeName name="chapter3.F_Overriding.Human"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="chapter4.A_Modifier.Example"/>
+    <fullyQualifiedTypeName name="chapter4.A_Modifier.Example2"/>
+    <fullyQualifiedTypeName name="chapter4.A_Modifier.Example1"/>
+    <fullyQualifiedTypeName name="chapter4.A_AccessModifier.Example4"/>
 </qualifiedTypeNameHistroy>
