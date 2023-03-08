@@ -71,7 +71,7 @@ public class ExchangeApplichation {
 			System.out.println("유효하지 않은 화폐 단위입니다.");
 			return;
 		}
-		// 정상 프로세스!!
+		// 정상 프로세스
 		double resultAmount = amount;
 
 		for (ExchangeRate exchangeRate : exchangeRates) {
