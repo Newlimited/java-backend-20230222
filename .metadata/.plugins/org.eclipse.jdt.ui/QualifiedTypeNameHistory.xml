@@ -32,4 +32,12 @@
     <fullyQualifiedTypeName name="chapter4.A_Modifier.Example2"/>
     <fullyQualifiedTypeName name="chapter4.A_Modifier.Example1"/>
     <fullyQualifiedTypeName name="chapter4.A_AccessModifier.Example4"/>
+    <fullyQualifiedTypeName name="chapter4.B_Polymorphism.SubClass1"/>
+    <fullyQualifiedTypeName name="chapter4.B_Polymorphism.SuperClass"/>
+    <fullyQualifiedTypeName name="chapter4.B_Polymorphism.Subclass2"/>
+    <fullyQualifiedTypeName name="chapter4.C_AbstractClass.Abstract"/>
+    <fullyQualifiedTypeName name="chapter4.C_AbstractClass.SubClass"/>
+    <fullyQualifiedTypeName name="chapter4.D_Interface.ExampleInterface"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="chapter4.D_Interface.Implement"/>
 </qualifiedTypeNameHistroy>

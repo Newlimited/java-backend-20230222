@@ -1,0 +1,8 @@
+package example.exchange;
+
+public class ExchangeApplichation {
+
+		public static void main(String[] args) {
+			
+		}
+}
