@@ -3,7 +3,6 @@
     <fullyQualifiedTypeName name="hello.HelloWorld"/>
     <fullyQualifiedTypeName name="javax.swing.plaf.basic.BasicMenuBarUI"/>
     <fullyQualifiedTypeName name="javax.annotation.processing.AbstractProcessor"/>
-    <fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
@@ -22,12 +21,10 @@
     <fullyQualifiedTypeName name="java.security.AlgorithmConstraints"/>
     <fullyQualifiedTypeName name="chapter3.D_Constructor.Circle"/>
     <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
     <fullyQualifiedTypeName name="chapter3.E_Inheritance.Human"/>
     <fullyQualifiedTypeName name="chapter3.E_Inheritance.Developer"/>
     <fullyQualifiedTypeName name="chapter3.F_Overriding.Developer"/>
     <fullyQualifiedTypeName name="chapter3.F_Overriding.Human"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="chapter4.A_Modifier.Example"/>
     <fullyQualifiedTypeName name="chapter4.A_Modifier.Example2"/>
     <fullyQualifiedTypeName name="chapter4.A_Modifier.Example1"/>
@@ -40,4 +37,8 @@
     <fullyQualifiedTypeName name="chapter4.D_Interface.ExampleInterface"/>
     <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="chapter4.D_Interface.Implement"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
+    <fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
+    <fullyQualifiedTypeName name="example.exchange.ExchangeRate"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>
