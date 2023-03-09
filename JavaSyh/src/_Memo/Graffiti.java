@@ -1,5 +1,6 @@
 package _Memo;
 
+import java.util.Random;
 import java.util.Scanner;
 
 //class Ex{
@@ -16,26 +17,15 @@ import java.util.Scanner;
 public class Graffiti {
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		String exchangingCurrency = null;
-		String exchangedCurrency = null;
-		int amount = 0;
-		try {
-			System.out.println("넣을 화폐 : ");
-			exchangingCurrency = scanner.nextLine();
-			System.out.println("바꿀 화폐 : ");
-			exchangedCurrency = scanner.nextLine();
-			System.out.println("금    액 : ");
-			amount = scanner.nextInt();
-
-		} catch (Exception exception) {
-//			exception.printStackTrace();  int에 문자를 넣었을 경우...
-			System.out.println("입력값의 타입이 맞지 않습니다.");
-			return;
+		Random random = new Random();
+		int[] lotto = new int[45];
+		
+		for(int index = 1; index < lotto.length; index++) {
+			lotto[index] = index;
 		}
-		String exchangingCurrencyCheck = exchangingCurrency.toUpperCase();
-		String exchangedCurrencyCheck = exchangedCurrency.toUpperCase();
-
-		System.out.println(exchangingCurrencyCheck + " " + exchangedCurrencyCheck + " " + amount);	
+		for(int index = 0; index < 6; index++) {
+			int lottoNumber = random.nextInt(6);
+			System.out.println(lottoNumber);
+		}
 	}
 }

@@ -1,0 +1,15 @@
+package chapter5.C_DateTime;
+
+//날짜 및 시간
+public class DateTime {
+	
+	public static void main(String[] args) {
+		//System.crrentTimeMillis()
+		//현재시간을 long 타입으로 0.001초 단위로 표현해줌
+		//기준 1960년 1월 1일 에서 얼마나 지났는지 
+		
+		long startTime = System.currentTimeMillis();
+		System.out.println(startTime);
+	}
+
+}
