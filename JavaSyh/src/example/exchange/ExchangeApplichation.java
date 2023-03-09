@@ -27,14 +27,24 @@ public class ExchangeApplichation {
 	public static void main(String[] args) {
 		// 입력
 		Scanner scanner = new Scanner(System.in);
+		String exchangingCurrency = null;
+		String exchangedCurrency = null;
+		int amount = 0;
+		try {
+			System.out.println("넣을 화폐 : ");
+			exchangingCurrency = scanner.nextLine();
+			System.out.println("바꿀 화폐 : ");
+			exchangedCurrency = scanner.nextLine();
+			System.out.println("금    액 : ");
+			amount = scanner.nextInt();
 
-		System.out.println("넣을 화폐 : ");
-		String exchangingCurrency = scanner.nextLine();
-		System.out.println("바꿀 화폐 : ");
-		String exchangedCurrency = scanner.nextLine();
-		System.out.println("금    액 : ");
-		int amount = scanner.nextInt();
-
+		} catch (Exception exception) {
+//			exception.printStackTrace();  int에 문자를 넣었을 경우...
+			System.out.println("입력값의 타입이 맞지 않습니다.");
+			return;
+		}
+		exchangingCurrency = exchangingCurrency.toUpperCase();
+		exchangedCurrency = exchangedCurrency.toUpperCase(); // 소문자를 대문자로변환
 		System.out.println(exchangingCurrency + " " + exchangedCurrency + " " + amount);
 		// 입력 검증 처리
 		// 모두 입력
@@ -77,7 +87,7 @@ public class ExchangeApplichation {
 		for (ExchangeRate exchangeRate : exchangeRates) {
 			boolean isSame = exchangingCurrency.equals(exchangeRate.getExchangingCurrency())
 					&& exchangedCurrency.equals(exchangeRate.getExchangedCurrency());
-			if(isSame){
+			if (isSame) {
 				resultAmount *= exchangeRate.getExchangeRate();
 				break; // 계속 Foreach 문을 돌리면 컴퓨터에 무리를 준다 따라서 break를 걸어준다
 			}

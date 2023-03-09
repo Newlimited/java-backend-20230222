@@ -1,0 +1,23 @@
+package chapter5.B_ApiClass;
+
+import java.util.Scanner;
+
+// API Class
+// Java 자체에서 제공하여 개발에 도움을 주는 각종 라이브러리
+public class ApiClass {
+	public static void main(String[] args) {
+
+		// Object class
+		// 모든 class의 조상 class
+		Object object = new Scanner(System.in);
+		object = new int[10];
+
+		// String class
+		// 문자열 처리에 대한 메서드가 정의되어 있는 클래스
+		char[] string = { 'a', 'b', 'c', 'd' };
+		for(char string2 : string) { 
+					System.out.println(string2);
+		}
+
+	}
+}
