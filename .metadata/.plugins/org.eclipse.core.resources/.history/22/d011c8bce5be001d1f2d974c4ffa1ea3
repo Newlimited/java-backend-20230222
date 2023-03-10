@@ -1,0 +1,83 @@
+package chapter6.A_CollectionClass;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+
+// Collection Framework
+// 배열형태의 데이터를 보다 편하게 사용 할 수 있도록 해주는 클래스
+
+public class CollectionClass {
+
+	public static void main(String[] args) {
+		// Set 클래스
+		// 집합 - 중복을 허용하지 않고 순서가 없는 형태
+		// 값 넣을시 .add(값) 사용
+		// 순서가 없기때문에 index로 접근 불가
+
+		// HashSet<E> : 중복을 허용하지 않고 순서가 없는 형태
+
+		Set<Integer> integerSet = new HashSet<Integer>();
+		integerSet.add(413);
+		integerSet.add(231);
+		integerSet.add(452);
+		integerSet.add(211);
+		integerSet.add(452);
+
+		Iterator<Integer> iterator = integerSet.iterator();
+
+		// hasNext -> boolean으로 적용, 다음값이 있는지 확인
+		while (iterator.hasNext()) {
+			System.out.println(iterator.next());
+
+		}
+		for (Integer item : integerSet) {
+			System.out.println(item);
+		}
+		// TreeSet<E> : 중복 x 순서 x + 정렬
+		
+		Set<Integer> treeSet = new TreeSet<Integer>();
+		treeSet.add(485);
+		treeSet.add(425);
+		treeSet.add(325);
+		treeSet.add(85);
+		treeSet.add(85);
+		treeSet.add(6542);
+		treeSet.add(6542);
+		treeSet.add(9488);
+		
+		for (Integer item: treeSet) {
+			System.out.println(item); 
+			// 85, 325, 425, 485, 6542, 9488
+		}
+		System.out.println(integerSet);
+		System.out.println("=======구분선=======");
+		
+		// List
+		// 데이터를 일렬로 나열
+		// 순서 O 중복 허용(배열)
+		
+		List<String> list = new ArrayList<String>();
+		list.add("apple");
+		list.add("car");
+		list.add("banana");
+		list.add("apple");
+		list.add(0,"Sinbi"); // 인덱스 , 값 -> 해당인덱스에 지정한 값 넣기
+		list.add("아자씨");
+		list.add("메롱메롱");
+		
+		list.set(0, "Sinb");
+		System.out.println(list); // toString() 붙여도된다.
+		for (int index = 0; index < list.size(); index++) {
+			System.out.println(list.get(index));
+			if(list.get(index).equals("Sinb")) {
+				System.err.println(list.get(index));
+			}
+		}
+		String removeItem = list.remove(0);
+		System.out.println(removeItem);
+	}
+}
