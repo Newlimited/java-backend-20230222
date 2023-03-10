@@ -10,7 +10,6 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
-import javax.xml.stream.events.StartDocument;
 
 // Collection Framework
 // 배열형태의 데이터를 보다 편하게 사용 할 수 있도록 해주는 클래스
