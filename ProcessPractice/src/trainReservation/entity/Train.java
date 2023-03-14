@@ -20,7 +20,7 @@ public class Train {
 	public Train() {
 	}
 
-	public Train(String trainNumber, String departureStation, String departureTime, String arriaval2Station,
+	public Train(String trainNumber, String departureStation, String departureTime, String arriavalStation,
 			String arrivalTime, int takeTimeMinute, String type, List<StopStation> stopStations, List<Seat> seats) {
 		this.trainNumber = trainNumber;
 		this.departureStation = departureStation;

@@ -10,7 +10,7 @@ public class StopStation {
 	public StopStation() {
 	}
 
-	public StopStation(String stationName, String arrivalTime, String departureTime) {
+	public StopStation(String stationName, String departureTime, String arrivalTime) {
 		this.stationName = stationName;
 		this.departureTime = departureTime;
 		this.arrivalTime = arrivalTime;
