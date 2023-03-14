@@ -1,6 +1,8 @@
 package trainReservation;
 
 import java.io.ObjectInputStream.GetField;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -15,15 +17,18 @@ public class MainApplication {
 
 	private static List<Train> trains = new ArrayList<>();
 	private static List<Cost> costs = new ArrayList<>();
-
+	private static DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
+	
 	public static void main(String[] args) {
 		initData();
+		
 		while (true) {
 			
-			Scanner scanner = new Scanner(System.in);
-			// 변수에 원래 동사가 들어가면 안된다 , 즉 get 이 들어가면안됨. 
-			GetTrainListDto dto = new GetTrainListDto(); 
-			// 원래 getTrainListDto로 변수명을 정햇음
+// 변수에 원래 동사가 들어가면 안된다 , 즉 get 이 들어가면안됨. 
+			GetTrainListDto dto = new GetTrainListDto();
+			
+			LocalTime departureTime = null;
+// 원래 getTrainListDto로 변수명을 정햇음
 //			System.out.print("출발 역 : ");
 //			dto.setDepartureStation(scanner.nextLine());
 //			System.out.print("도착 역 : ");
@@ -32,14 +37,36 @@ public class MainApplication {
 //			dto.setDepartureTime(scanner.nextLine()); 
 //			System.out.print("인원 수 : ");
 //			dto.setNumberOfPeople(scanner.nextInt());
-			if(dto.getArrivalStation().isBlank() || 
-				dto.getDepartureStation().isBlank() || 
-				dto.getDepartureTime().isBlank()){
+			if(dto.isEmpty()) {
+//					dto.getArrivalStation().isBlank() ||  // 메서드로 작성
+//				dto.getDepartureStation().isBlank() || 
+//				dto.getDepartureTime().isBlank()){
 				System.out.println("모두 입력하세요");
 				continue;
 			}
-			System.out.println(dto.toString());	}
-		//dto 인스턴스 , 입력받은값을 넣어주고있음 23~34
+			try {
+				departureTime = LocalTime.parse(dto.getDepartureStation(), timeFormatter);
+			}catch(Exception exception) {
+				System.out.println("잘못된 시간입니다.");
+				continue;
+			}
+			if(dto.getNumberOfPeople() <= 0) { 
+				System.out.println("잘못된 인원입니다.");
+				continue;
+			}
+			if(dto.isEqualStation()) {
+//				dto.getDepartureStation().equals(dto.getArrivalStation())) 메서드로 작성
+				System.out.println("출발역과 도착역이 같습니다.");
+				continue;
+			}
+			
+			List<Train> possibleTrains = new ArrayList<>();
+			for(Train train : trains) {
+				
+			}
+		}
+			
+			//dto 인스턴스 , 입력받은값을 넣어주고있음 23~34
 		// 모든 메서드나 함수에 대해서 적용되는 법칙
 		// Garbage in garbage out
 		// Dto 데이터 전송 객체 , Data Transfer Object.

@@ -34,5 +34,5 @@ public class StopStation {
 				", departureTime=" + departureTime + 
 				", arrivalTime=" + arrivalTime + "]";
 	}
-
+	
 }
