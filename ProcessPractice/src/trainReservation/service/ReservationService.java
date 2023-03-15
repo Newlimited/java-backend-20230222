@@ -34,11 +34,12 @@ public class ReservationService {
 			int sameStationIndex = -1;
 			
 			for (int stopStationIndex = 0; stopStationIndex < stopStations.size(); stopStationIndex++) {
-				String stopStationName = stopStations.get(stopStationIndex).getStationName();
+				StopStation stopStation = stopStations.get(stopStationIndex);
+					String stopStationName = stopStation.getStationName();
 				
 				if (!dto.isEqualDepartureStation(stopStationName)) continue;
 				
-				LocalTime stationDepartureTime = LocalTime.parse(dto.getDepartureTime(), timeFormatter);
+				LocalTime stationDepartureTime = LocalTime.parse(stopStation.getDepartureTime(), timeFormatter);
 				
 				if (stationDepartureTime.isBefore(departureTime)) break;
 				
