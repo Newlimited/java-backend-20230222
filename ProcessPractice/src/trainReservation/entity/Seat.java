@@ -3,14 +3,15 @@ package trainReservation.entity;
 public class Seat {
 	private int roomNumber;
 	private String seatNumber;
-	private boolean seatstatus;
-	
-	public Seat() {}
+	private boolean seatStatus;
 
-	public Seat(int roomNumber, String seatNumber, boolean seatstatus) {
+	public Seat() {
+	}
+
+	public Seat(int roomNumber, String seatNumber, boolean seatStatus) {
 		this.roomNumber = roomNumber;
 		this.seatNumber = seatNumber;
-		this.seatstatus = seatstatus;
+		this.seatStatus = seatStatus;
 	}
 
 	public int getRoomNumber() {
@@ -21,16 +22,17 @@ public class Seat {
 		return seatNumber;
 	}
 
-	public boolean isSeatstatus() {
-		return seatstatus;
+	public boolean isSeatStatus() {
+		return seatStatus;
+	}
+
+	public void setSeatStatus(boolean seatStatus) {
+		 this.seatStatus=seatStatus;
 	}
 
 	@Override
 	public String toString() {
-		return "Seat [roomNumber=" + roomNumber + 
-				", seatNumber=" + seatNumber + 
-				", seatstatus=" + seatstatus + "]";
+		return "Seat [roomNumber=" + roomNumber + ", seatNumber=" + seatNumber + ", seatstatus=" + seatStatus + "]";
 	}
-	
 
 }
