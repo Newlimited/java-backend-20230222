@@ -21,7 +21,6 @@ public class ReservationController {
 	private GetTrainListDto getTrainListdto;
 	private GetReservationDto getReservationDto;
 	private PostReservationDto postReservationDto;
-	
 
 	public ReservationController() {
 		this.reservationService = new ReservationService();
@@ -73,28 +72,43 @@ public class ReservationController {
 			break;
 		}
 	}
+
 	public void postReservation() {
 
 		while (true) {
 			postReservationDto = new PostReservationDto(getTrainListdto.getNumberOfPeople());
 			ReservationInfo reservationInfo = reservationService.postReservation(postReservationDto, getTrainListdto);
-			if (reservationInfo == null)continue;
+			if (reservationInfo == null)
+				continue;
 			System.out.println(reservationInfo.toString());
 			break;
 		}
 	}
+
 	public void getReservation() {
-		while(true) {
-		 getReservationDto = new GetReservationDto();
-		 String reservationNumber = getReservationDto.getReservationNumber();
-		 
-		 if (reservationNumber.isBlank()) {
-			 System.out.println("예약번호를 입력하세요.");
-			 continue;
-		 	 }
-		 ReservationInfo reservationInfo = reservationService.getReservation(getReservationDto);
-		 System.out.println(reservationInfo.toString());
-		 break;
+		while (true) {
+			getReservationDto = new GetReservationDto();
+			String reservationNumber = getReservationDto.getReservationNumber();
+
+			if (reservationNumber.isBlank()) {
+				System.out.println("예약번호를 입력하세요.");
+				continue;
+			}
+			ReservationInfo reservationInfo = reservationService.getReservation(getReservationDto);
+
+			String message = 
+					reservationInfo == null ? 
+							"해당하는 예약 번호가 없습니다." : reservationInfo.toString(); 
+//			 웬만하면 위의 삼항연산자 방법은...X
+
+//			 if(reservationInfo == null) {
+//			 System.out.println("해당 예약번호의 예약정보가 없습니다."); 
+//			 break 를 붙여줘야한다. 안그러면 아래 toString이 계속 돈다.
+//			 break;
+//		 }// 삼항연산자를 사용해서 지정가능 
+//		 System.out.println(reservationInfo.toString());
+			System.out.println(message);
+			break;
 		}
 	}
 
