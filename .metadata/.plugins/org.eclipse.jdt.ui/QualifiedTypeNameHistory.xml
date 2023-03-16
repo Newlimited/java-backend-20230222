@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="chapter4.A_AccessModifier.Example4"/>
-    <fullyQualifiedTypeName name="chapter4.B_Polymorphism.SubClass1"/>
-    <fullyQualifiedTypeName name="chapter4.B_Polymorphism.SuperClass"/>
     <fullyQualifiedTypeName name="chapter4.B_Polymorphism.Subclass2"/>
     <fullyQualifiedTypeName name="chapter4.C_AbstractClass.Abstract"/>
     <fullyQualifiedTypeName name="chapter4.C_AbstractClass.SubClass"/>
@@ -13,7 +10,6 @@
     <fullyQualifiedTypeName name="example.exchange.ExchangeRate"/>
     <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
-    <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.time.temporal.ChronoUnit"/>
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
     <fullyQualifiedTypeName name="javax.print.attribute.standard.JobMessageFromOperator"/>
@@ -50,14 +46,18 @@
     <fullyQualifiedTypeName name="java.time.LocalTime"/>
     <fullyQualifiedTypeName name="trainReservation.controller.ReservationController"/>
     <fullyQualifiedTypeName name="trainReservation.entity.StopStation"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
-    <fullyQualifiedTypeName name="trainReservation.dto.PostReservationDto"/>
     <fullyQualifiedTypeName name="trainReservation.entity.Train"/>
     <fullyQualifiedTypeName name="trainReservation.dto.GetTrainListDto"/>
     <fullyQualifiedTypeName name="java.util.UUID"/>
     <fullyQualifiedTypeName name="trainReservation.service.ReservationService"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="trainReservation.dto.PostReservationDto"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="trainReservation.dto.GetReservationDto"/>
     <fullyQualifiedTypeName name="trainReservation.entity.ReservationInfo"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="board.entity.Like"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="board.entity.Comment"/>
 </qualifiedTypeNameHistroy>
