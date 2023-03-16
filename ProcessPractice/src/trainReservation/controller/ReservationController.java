@@ -5,6 +5,7 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+import trainReservation.dto.GetReservationDto;
 import trainReservation.dto.GetTrainListDto;
 import trainReservation.dto.PostReservationDto;
 import trainReservation.entity.ReservationInfo;
@@ -18,7 +19,9 @@ public class ReservationController {
 	private static DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
 	private ReservationService reservationService;
 	private GetTrainListDto getTrainListdto;
+	private GetReservationDto getReservationDto;
 	private PostReservationDto postReservationDto;
+	
 
 	public ReservationController() {
 		this.reservationService = new ReservationService();
@@ -68,10 +71,8 @@ public class ReservationController {
 
 			postReservation();
 			break;
-
 		}
 	}
-
 	public void postReservation() {
 
 		while (true) {
@@ -82,8 +83,19 @@ public class ReservationController {
 			break;
 		}
 	}
-	public void getReservationInfo() {
-		
+	public void getReservation() {
+		while(true) {
+		 getReservationDto = new GetReservationDto();
+		 String reservationNumber = getReservationDto.getReservationNumber();
+		 
+		 if (reservationNumber.isBlank()) {
+			 System.out.println("예약번호를 입력하세요.");
+			 continue;
+		 	 }
+		 ReservationInfo reservationInfo = reservationService.getReservation(getReservationDto);
+		 System.out.println(reservationInfo.toString());
+		 break;
+		}
 	}
 
 }
