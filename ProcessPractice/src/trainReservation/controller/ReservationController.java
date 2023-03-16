@@ -16,10 +16,9 @@ import trainReservation.service.ReservationService;
 public class ReservationController {
 
 	private static DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
-
 	private ReservationService reservationService;
-
 	private GetTrainListDto getTrainListdto;
+	private PostReservationDto postReservationDto;
 
 	public ReservationController() {
 		this.reservationService = new ReservationService();
@@ -29,7 +28,7 @@ public class ReservationController {
 		while (true) {
 
 			// 변수에 원래 동사가 들어가면 안된다 , 즉 get 이 들어가면안됨.
-			GetTrainListDto getTrainListdto = new GetTrainListDto();
+			getTrainListdto = new GetTrainListDto();
 
 			LocalTime departureTime = null;
 			// 원래 getTrainListDto로 변수명을 정햇음
@@ -67,16 +66,24 @@ public class ReservationController {
 			List<Train> possibleTrains = reservationService.getPossibleTrainList(getTrainListdto, departureTime);
 			System.out.println(possibleTrains.toString()); // 이용할 수 있는 열차 출력
 
-			ReservationInfo reservationInfo = null;
+			postReservation();
+			break;
 
-			while (true) {
-				PostReservationDto postReservationDto = new PostReservationDto(getTrainListdto.getNumberOfPeople());
-				reservationInfo = reservationService.postReservation(postReservationDto, getTrainListdto);
-				if (reservationInfo == null)
-					continue;
-				break;
-			}
-			System.out.println(reservationInfo.toString());
 		}
 	}
+
+	public void postReservation() {
+
+		while (true) {
+			postReservationDto = new PostReservationDto(getTrainListdto.getNumberOfPeople());
+			ReservationInfo reservationInfo = reservationService.postReservation(postReservationDto, getTrainListdto);
+			if (reservationInfo == null)continue;
+			System.out.println(reservationInfo.toString());
+			break;
+		}
+	}
+	public void getReservationInfo() {
+		
+	}
+
 }
