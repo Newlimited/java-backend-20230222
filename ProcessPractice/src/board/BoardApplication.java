@@ -2,7 +2,10 @@ package board;
 
 import java.util.Scanner;
 
+import board.common.constant.HttpStatus;
+import board.controller.BoardController;
 import board.controller.UserController;
+import board.dto.reqeuset.user.SignInDto;
 import board.dto.reqeuset.user.SignUpDto;
 
 //DAO = > Data Access Object
@@ -11,7 +14,10 @@ import board.dto.reqeuset.user.SignUpDto;
 // 휴대폰번호도 중복검사. 
 // 클라이언트가 서버에 요청Request -> 서버에서 값을 준다 -- >> 프로그램
 public class BoardApplication {
+	private static BoardController boardController = new BoardController();
 	private static UserController userController = new UserController();
+	private static final String SIGN_UP = "POST /sign-up" ;
+	private static final String SIGN_IN = "POST /sign-in" ;
 
 	public static void main(String[] args) {
 
@@ -21,27 +27,38 @@ public class BoardApplication {
 			String endPoint = scanner.nextLine();
 
 			switch (endPoint) {
-			case "POST /sign-up":
-				SignUpDto dto = new SignUpDto();
+			case SIGN_UP:
+				SignUpDto signUpDto = new SignUpDto();
 				System.out.println("이메일 주소 :");
-				dto.setEmail(scanner.nextLine());
+				signUpDto.setEmail(scanner.nextLine());
 				System.out.println("비밀번호 :");
-				dto.setPassword(scanner.nextLine());
+				signUpDto.setPassword(scanner.nextLine());
 				System.out.println("비밀번호 확인 :");
-				dto.setPasswordCheck(scanner.nextLine());
+				signUpDto.setPasswordCheck(scanner.nextLine());
 				System.out.println("닉네임 :");
-				dto.setNickName(scanner.nextLine());
+				signUpDto.setNickName(scanner.nextLine());
 				System.out.println("휴대폰 번호 :");
-				dto.setPhoneNumber(scanner.nextLine());
+				signUpDto.setPhoneNumber(scanner.nextLine());
 				System.out.println("주소 :");
-				dto.setAddress(scanner.nextLine());
+				signUpDto.setAddress(scanner.nextLine());
 				System.out.println("상세 주소 :");
-				dto.setAddressDetail(scanner.nextLine());
+				signUpDto.setAddressDetail(scanner.nextLine());
 //				System.out.println(dto.toString());
-				userController.signUp(dto);
+				userController.signUp(signUpDto);
+				break;
+			case SIGN_IN:
+				SignInDto signInDto = new SignInDto();
+				System.out.print("이메일 주소 :");
+				signInDto.setEmail(scanner.nextLine());
+				System.out.print("비밀번호 :");
+				signInDto.setPassword(scanner.nextLine());
+				
+//				System.out.println(signInDto.toString());
+				userController.signIn(signInDto);
 				break;
 			default:
-				System.out.println("404 Not Found"); //HTTP 에서 파일을 찾지 못할 때
+				System.out.println(HttpStatus.NOT_FOUND); // HTTP 에서 파일을 찾지 못할 때
+//				System.out.println("404 Not Found"); //HTTP 에서 파일을 찾지 못할 때
 
 			}
 		}
