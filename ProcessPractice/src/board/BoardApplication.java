@@ -21,8 +21,8 @@ public class BoardApplication {
 	private static final String SIGN_IN = "POST /sign-in";
 	private static final String POST_BOARD = "POST /board";
 
-	private static final String GET_BOARD_LIST = "GET /board/list";
 	private static final String GET_BOARD = "GET /board";
+	private static final String GET_BOARD_LIST = "GET /board/list";
 
 	public static void main(String[] args) {
 
