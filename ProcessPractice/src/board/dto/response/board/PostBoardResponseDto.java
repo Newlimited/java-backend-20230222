@@ -17,7 +17,7 @@ public class PostBoardResponseDto {
 	private String title;
 	private String content;
 	private int viewcount;
-	private List<Like> listList;
+	private List<Like> likeList;
 	private List<Comment> commentList; // List 인데 비어있음 처음엔
 
 	public PostBoardResponseDto() {
@@ -25,7 +25,7 @@ public class PostBoardResponseDto {
 
 	public PostBoardResponseDto(int boardNumber, String boardImageUrl, String writerEmail, String writerNickName,
 			String writerProfileImageUrl, String writeDate, String title, String content, int viewcount,
-			List<Like> listList, List<Comment> commentList) {
+			List<Like> likeList, List<Comment> commentList) {
 		this.boardNumber = boardNumber;
 		this.boardImageUrl = boardImageUrl;
 		this.writerEmail = writerEmail;
@@ -35,7 +35,7 @@ public class PostBoardResponseDto {
 		this.title = title;
 		this.content = content;
 		this.viewcount = viewcount;
-		this.listList = listList;
+		this.likeList = likeList;
 		this.commentList = commentList;
 	}
 
@@ -97,7 +97,7 @@ public class PostBoardResponseDto {
 		this.title = board.getTitle();
 		this.content = board.getContent();
 		this.viewcount = board.getViewcount();
-		this.listList = board.getListList();
+		this.likeList = board.getLikeList();
 		this.commentList = board.getCommentList();
 	}
 
@@ -125,12 +125,12 @@ public class PostBoardResponseDto {
 		this.viewcount = viewcount;
 	}
 
-	public List<Like> getListList() {
-		return listList;
+	public List<Like> getLikeList() {
+		return likeList;
 	}
 
-	public void setListList(List<Like> listList) {
-		this.listList = listList;
+	public void setLikeList(List<Like> likeList) {
+		this.likeList = likeList;
 	}
 
 	public List<Comment> getCommentList() {
@@ -146,6 +146,6 @@ public class PostBoardResponseDto {
 		return "PostBoardResponseDto [boardNumber=" + boardNumber + ", boardImageUrl=" + boardImageUrl
 				+ ", writerEmail=" + writerEmail + ", writerNickName=" + writerNickName + ", writerProfileImageUrl="
 				+ writerProfileImageUrl + ", writeDate=" + writeDate + ", title=" + title + ", content=" + content
-				+ ", viewcount=" + viewcount + ", listList=" + listList + ", commentList=" + commentList + "]";
+				+ ", viewcount=" + viewcount + ", liketList=" + likeList + ", commentList=" + commentList + "]";
 	}
 }

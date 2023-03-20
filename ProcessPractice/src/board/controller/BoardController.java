@@ -1,8 +1,12 @@
 package board.controller;
 
+import java.util.List;
+
 import board.common.constant.HttpStatus;
 import board.dto.reqeuset.board.PostBoardDto;
 import board.dto.response.ResponseDto;
+import board.dto.response.board.GetBoardListResponseDto;
+import board.dto.response.board.GetBoardResponseDto;
 import board.dto.response.board.PostBoardResponseDto;
 import board.service.BoardService;
 
@@ -16,6 +20,7 @@ public class BoardController {
 		// this.boardService ,, 생성자에 BoardService 데이터변수와 매게변수를 지정하여
 		// 밖에서 받아오는것처럼 한다. 이것이 의존성역전 DIP Dependency Inverse Principle
 	}
+
 	public void postBoard(PostBoardDto dto) {
 		// 인증 - 누군지 ? 인과는 - 권한 확인
 		if (dto.auth()) {
@@ -30,5 +35,22 @@ public class BoardController {
 		ResponseDto<PostBoardResponseDto> response = boardService.postBoard(dto);
 		System.out.println(response.toString());
 	}
-		
+
+	public void getBoardList() {
+		ResponseDto<List<GetBoardListResponseDto>> response = boardService.getBoardList();
+
+		System.out.println(response.toString());
 	}
+
+	public void getBoard(int boardNumber) {
+
+		if (boardNumber <= 0) {
+			System.out.println(HttpStatus.BAD_REQUEST);
+			return;
+		}
+		ResponseDto<GetBoardResponseDto> response = 
+				boardService.getBoard(boardNumber);
+		System.out.println(response.toString());
+	}
+	
+}

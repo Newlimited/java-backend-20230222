@@ -29,7 +29,7 @@ public class Board {
 	private String title;
 	private String content;
 	private int viewcount;
-	private List<Like> listList;
+	private List<Like> likeList;
 	private List<Comment> commentList; // List 인데 비어있음 처음엔
 
 	public Board() {
@@ -37,7 +37,7 @@ public class Board {
 
 	public Board(int boardNumber, String boardImageUrl, String writerEmail, String writerNickName,
 			String writerProfileImageUrl, String writeDate, String title, String content, int viewcount,
-			List<Like> listList, List<Comment> commentList) {
+			List<Like> likeList, List<Comment> commentList) {
 		this.boardNumber = boardNumber;
 		this.boardImageUrl = boardImageUrl;
 		this.writerEmail = writerEmail;
@@ -47,7 +47,7 @@ public class Board {
 		this.title = title;
 		this.content = content;
 		this.viewcount = viewcount;
-		this.listList = listList;
+		this.likeList = likeList;
 		this.commentList = commentList;
 	}
 	public Board(PostBoardDto dto , User user) {
@@ -62,7 +62,7 @@ public class Board {
 		this.title = dto.getTitle();
 		this.content = dto.getContent();
 		this.viewcount = 0;
-		this.listList = new ArrayList<>();
+		this.likeList = new ArrayList<>();
 		this.commentList = new ArrayList<>();
 	}
 	
@@ -139,12 +139,12 @@ public class Board {
 		this.viewcount = viewcount;
 	}
 
-	public List<Like> getListList() {
-		return listList;
+	public List<Like> getLikeList() {
+		return likeList;
 	}
 
-	public void setListList(List<Like> listList) {
-		this.listList = listList;
+	public void setListList(List<Like> likeList) {
+		this.likeList = likeList;
 	}
 
 	public List<Comment> getCommentList() {
@@ -160,7 +160,7 @@ public class Board {
 		return "Board [boardNumber=" + boardNumber + ", boardImageUrl=" + boardImageUrl + ", writerEmail=" + writerEmail
 				+ ", writerNickName=" + writerNickName + ", writerProfileImageUrl=" + writerProfileImageUrl
 				+ ", writeDate=" + writeDate + ", title=" + title + ", content=" + content + ", viewcount=" + viewcount
-				+ ", listList=" + listList + ", commentList=" + commentList + "]";
+				+ ", likeList=" + likeList + ", commentList=" + commentList + "]";
 	}
 
 }

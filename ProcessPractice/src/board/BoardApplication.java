@@ -17,13 +17,17 @@ import board.dto.reqeuset.user.SignUpDto;
 public class BoardApplication {
 	private static BoardController boardController = new BoardController();
 	private static UserController userController = new UserController();
-	private static final String SIGN_UP = "POST /sign-up";
-	private static final String SIGN_IN = "POST /sign-in";
-	private static final String POST_BOARD = "POST /board";
+	private static final String SIGN_UP = "회원가입"; // POST /sing-up
+	private static final String SIGN_IN = "로그인"; // POST /sign-in
+	
+	private static final String POST_BOARD = "게시물 작성"; //POST /board
 
-	private static final String GET_BOARD = "GET /board";
+	private static final String GET_BOARD = "게시물 불러오기"; // GET /board
 	private static final String GET_BOARD_LIST = "GET /board/list";
 
+	private static final String PATH_BOARD = "PATCH /board";
+	private static final String DELETE_BOARD = "DELETE /board";
+	
 	public static void main(String[] args) {
 
 		while (true) {
@@ -74,7 +78,23 @@ public class BoardApplication {
 
 				boardController.postBoard(postBoardDto);
 				break;
-			default:
+			case GET_BOARD_LIST:
+				
+				boardController.getBoardList();
+				break;
+			case GET_BOARD:
+				int boardNumber = 0;
+				try {
+				System.out.print("게시물 번호 : ");
+				boardNumber = scanner.nextInt();
+				// 예외처리 --> 정수만 넣어야하는데 입력값이 정수를 안넣을 경우도있다.
+				}catch(Exception exception) {
+					exception.printStackTrace(); 
+//					System.out.println("정수값만 입력하세요");
+					continue;
+				}
+				boardController.getBoard(boardNumber); //boardNumber 빨간줄나는 이유 try 괄호안에 선언되어잇음
+				default:
 				System.out.println(HttpStatus.NOT_FOUND); // HTTP 에서 파일을 찾지 못할 때
 //				System.out.println("404 Not Found"); //HTTP 에서 파일을 찾지 못할 때
 
