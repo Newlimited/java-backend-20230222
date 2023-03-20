@@ -5,6 +5,7 @@ import java.util.Scanner;
 import board.common.constant.HttpStatus;
 import board.controller.BoardController;
 import board.controller.UserController;
+import board.dto.reqeuset.board.PostBoardDto;
 import board.dto.reqeuset.user.SignInDto;
 import board.dto.reqeuset.user.SignUpDto;
 
@@ -16,8 +17,12 @@ import board.dto.reqeuset.user.SignUpDto;
 public class BoardApplication {
 	private static BoardController boardController = new BoardController();
 	private static UserController userController = new UserController();
-	private static final String SIGN_UP = "POST /sign-up" ;
-	private static final String SIGN_IN = "POST /sign-in" ;
+	private static final String SIGN_UP = "POST /sign-up";
+	private static final String SIGN_IN = "POST /sign-in";
+	private static final String POST_BOARD = "POST /board";
+
+	private static final String GET_BOARD_LIST = "GET /board/list";
+	private static final String GET_BOARD = "GET /board";
 
 	public static void main(String[] args) {
 
@@ -52,9 +57,22 @@ public class BoardApplication {
 				signInDto.setEmail(scanner.nextLine());
 				System.out.print("비밀번호 :");
 				signInDto.setPassword(scanner.nextLine());
-				
+
 //				System.out.println(signInDto.toString());
 				userController.signIn(signInDto);
+				break;
+			case POST_BOARD:
+				PostBoardDto postBoardDto = new PostBoardDto();
+				System.out.print("제목 : ");
+				postBoardDto.setTitle(scanner.nextLine());
+				System.out.println("내용 : ");
+				postBoardDto.setContent(scanner.nextLine());
+				System.out.println("이미지 : ");
+				postBoardDto.setBoardImageUrl(scanner.nextLine());
+				System.out.println("작성자 이메일 : ");
+				postBoardDto.setWriterEmail(scanner.nextLine());
+
+				boardController.postBoard(postBoardDto);
 				break;
 			default:
 				System.out.println(HttpStatus.NOT_FOUND); // HTTP 에서 파일을 찾지 못할 때
