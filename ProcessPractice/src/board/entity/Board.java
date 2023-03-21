@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import board.dto.reqeuset.board.PatchBoardDto;
 import board.dto.reqeuset.board.PostBoardDto;
 import board.repository.BoardRepository;
 
@@ -28,7 +29,7 @@ public class Board {
 	private String writeDate; // 사용자로부터 받아도 되고, Date로 넣어도되고 지금은 지정으로...
 	private String title;
 	private String content;
-	private int viewcount;
+	private int viewCount;
 	private List<Like> likeList;
 	private List<Comment> commentList; // List 인데 비어있음 처음엔
 
@@ -36,7 +37,7 @@ public class Board {
 	}
 
 	public Board(int boardNumber, String boardImageUrl, String writerEmail, String writerNickName,
-			String writerProfileImageUrl, String writeDate, String title, String content, int viewcount,
+			String writerProfileImageUrl, String writeDate, String title, String content, int viewCount,
 			List<Like> likeList, List<Comment> commentList) {
 		this.boardNumber = boardNumber;
 		this.boardImageUrl = boardImageUrl;
@@ -46,7 +47,7 @@ public class Board {
 		this.writeDate = writeDate;
 		this.title = title;
 		this.content = content;
-		this.viewcount = viewcount;
+		this.viewCount = viewCount;
 		this.likeList = likeList;
 		this.commentList = commentList;
 	}
@@ -61,7 +62,7 @@ public class Board {
 		this.writeDate = simpleDateFormat.format(now);
 		this.title = dto.getTitle();
 		this.content = dto.getContent();
-		this.viewcount = 0;
+		this.viewCount = 0;
 		this.likeList = new ArrayList<>();
 		this.commentList = new ArrayList<>();
 	}
@@ -131,12 +132,12 @@ public class Board {
 		this.content = content;
 	}
 
-	public int getViewcount() {
-		return viewcount;
+	public int getviewCount() {
+		return viewCount;
 	}
 
-	public void setViewcount(int viewcount) {
-		this.viewcount = viewcount;
+	public void setviewCount(int viewCount) {
+		this.viewCount = viewCount;
 	}
 
 	public List<Like> getLikeList() {
@@ -159,8 +160,17 @@ public class Board {
 	public String toString() {
 		return "Board [boardNumber=" + boardNumber + ", boardImageUrl=" + boardImageUrl + ", writerEmail=" + writerEmail
 				+ ", writerNickName=" + writerNickName + ", writerProfileImageUrl=" + writerProfileImageUrl
-				+ ", writeDate=" + writeDate + ", title=" + title + ", content=" + content + ", viewcount=" + viewcount
+				+ ", writeDate=" + writeDate + ", title=" + title + ", content=" + content + ", viewCount=" + viewCount
 				+ ", likeList=" + likeList + ", commentList=" + commentList + "]";
+	}
+	
+	public void increaseviewCount() {
+		this.viewCount++;
+	}
+	public void patch(PatchBoardDto dto) {
+		this.title = dto.getTitle();
+		this.content = dto.getContent();
+		this.boardImageUrl = dto.getBoardImageUrl();
 	}
 
 }

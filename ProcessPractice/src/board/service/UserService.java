@@ -1,6 +1,6 @@
 package board.service;
 
-import board.common.constant.ResponsMessage;
+import board.common.constant.ResponseMessage;
 import board.dto.reqeuset.user.SignInDto;
 import board.dto.reqeuset.user.SignUpDto;
 import board.dto.response.ResponseDto;
@@ -24,15 +24,15 @@ public class UserService {
 
 		boolean hasEmail = userRepository.existsByEmail(email);
 		if (hasEmail)
-			return new ResponseDto<Boolean>(false, ResponsMessage.EXIST_EMAIL, false);
+			return new ResponseDto<Boolean>(false, ResponseMessage.EXIST_EMAIL, false);
 
 		if (!password.equals(passwordCheck)) {
-			return new ResponseDto(false, ResponsMessage.PASSWORD_NOT_MATCH, false);
+			return new ResponseDto(false, ResponseMessage.PASSWORD_NOT_MATCH, false);
 		}
 		User user = new User(dto);
 		userRepository.save(user);
 
-		return new ResponseDto<Boolean>(true, ResponsMessage.SUCCESS, true);
+		return new ResponseDto<Boolean>(true, ResponseMessage.SUCCESS, true);
 	}
 
 	public ResponseDto<SignInResponseDto> signIn(SignInDto dto) {
@@ -44,12 +44,12 @@ public class UserService {
 
 		User user = userRepository.findByEmail(email);
 		if (user == null)
-			return new ResponseDto<>(false, ResponsMessage.FAIL_SIGN_IN, null);
+			return new ResponseDto<>(false, ResponseMessage.FAIL_SIGN_IN, null);
 		boolean isEqualPassword = user.getPassword().equals(password);
 		if (!isEqualPassword)
-			return new ResponseDto<>(false, ResponsMessage.FAIL_SIGN_IN, null);
+			return new ResponseDto<>(false, ResponseMessage.FAIL_SIGN_IN, null);
 		data = new SignInResponseDto(user);
-		return new ResponseDto(true, ResponsMessage.SUCCESS, data);
+		return new ResponseDto(true, ResponseMessage.SUCCESS, data);
 
 	}
 }

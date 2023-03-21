@@ -96,7 +96,7 @@ public class PostBoardResponseDto {
 		this.writeDate = board.getWriteDate();
 		this.title = board.getTitle();
 		this.content = board.getContent();
-		this.viewcount = board.getViewcount();
+		this.viewcount = board.getviewCount();
 		this.likeList = board.getLikeList();
 		this.commentList = board.getCommentList();
 	}

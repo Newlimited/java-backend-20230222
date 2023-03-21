@@ -17,10 +17,11 @@ public class BoardRepository {
 			Board boardItem = boardTable.get(index);
 			if(boardItem.getBoardNumber() == board.getBoardNumber()) {
 				boardTable.set(index, board);
+				isExist = true;
 				break;
 			}
 		}
-		boardTable.add(board);
+		if(!isExist) boardTable.add(board);
 		return board;
 	}
 	public Board findByBoardNumber(int boardNumber) {
@@ -36,6 +37,16 @@ public class BoardRepository {
 	}
 	public List<Board> findBy(){
 		return boardTable;
+	}
+	
+	public void deleteByBoardNumber(int boardNumber) {
+		for(int index = 0 ; index < boardTable.size(); index ++) {
+			Board board = boardTable.get(index);
+			if( board .getBoardNumber() == boardNumber) {
+				boardTable.remove(board); // board 대신 index 넣어도됨
+				break;
+			}
+		}
 	}
 	
 }
