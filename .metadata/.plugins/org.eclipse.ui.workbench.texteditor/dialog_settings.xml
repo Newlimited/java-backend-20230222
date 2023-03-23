@@ -6,13 +6,19 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="isBlank"/>
+		<item key="selection" value="boardNumber"/>
 		<list key="findhistory">
+			<item value="&#x09;&#x09;&#x09;boolean isEqualpassword = (user.password != user.passwordCheck);"/>
+			<item value="boardNuimber"/>
+			<item value="viewcount"/>
+			<item value="save"/>
 			<item value="if(radius &lt;= 0) {"/>
 			<item value="isEmpty"/>
 			<item value="증감"/>
 		</list>
 		<list key="replacehistory">
+			<item value="boardNumber"/>
+			<item value="viewCount"/>
 			<item value="isBlank"/>
 		</list>
 	</section>
