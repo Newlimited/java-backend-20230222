@@ -51,11 +51,11 @@ CREATE TABLE Station (
  좌석 = 어떤기차, 몇 호실 , 몇번째  일대다의 관계가 맺어진다.
  어떻게 정의할 것인가.....?*/
  CREATE TABLE SEAT (
+    seat_code VARCHAR(5) PRIMARY KEY,
     type VARCHAR(10),
     seat_number VARCHAR(2),
     train_type VARCHAR(10)
 );
- 
- 
- 
+ /* 3개를 primary key 로 잡아서 쓰기도한다. 
+ 하지만 복잡하다..... */
  
